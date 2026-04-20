@@ -28,7 +28,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="border-b px-6 py-4 flex justify-between items-center bg-white dark:bg-black">
+    <nav className="border-b px-6 py-4 flex justify-between items-center">
       <div className="font-bold text-xl">Aaple Tools</div>
 
       <div className="flex gap-6 text-sm items-center">

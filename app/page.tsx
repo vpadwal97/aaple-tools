@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main style={{ padding: "20px" }}>
+    <main>
       <Navbar />
       <h1>Free Online Tools</h1>
       <p>
