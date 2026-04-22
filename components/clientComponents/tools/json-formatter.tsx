@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { formatJSON } from "@/lib/jsonFormatter";
+import CopyButton from "@/components/CopyButton";
 
 export default function JsonFormatterClientPage() {
   const [input, setInput] = useState("");
@@ -65,16 +66,7 @@ export default function JsonFormatterClientPage() {
         Clear
       </button>
 
-      <button
-        style={{
-          marginTop: "10px",
-          padding: "10px 20px",
-          cursor: "pointer",
-        }}
-        onClick={() => navigator.clipboard.writeText(output)}
-      >
-        Copy Output
-      </button>
+      <CopyButton text={output} />
       {/* Error */}
       {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
 
