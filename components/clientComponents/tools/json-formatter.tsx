@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import { formatJSON } from "@/lib/jsonFormatter";
 
 export default function JsonFormatterClientPage() {
-  const [count, setCount] = useState(0);
-
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
@@ -20,17 +18,17 @@ export default function JsonFormatterClientPage() {
     }
   };
 
+  useEffect(() => {
+    if (input.trim()) {
+      const result = formatJSON(input);
+      if (result !== "Invalid JSON") {
+        setOutput(result);
+        setError("");
+      }
+    }
+  }, [input]);
   return (
     <>
-      <button
-        onClick={() => {
-          console.log("CLICK WORKS");
-          setCount(count + 1);
-        }}
-      >
-        Click {count}
-      </button>
-
       {/* Input */}
       <textarea
         placeholder="Paste your JSON here..."
@@ -44,14 +42,6 @@ export default function JsonFormatterClientPage() {
         }}
       />
 
-      <button
-        onClick={() => {
-          console.log("CLICK WORKING");
-          alert("clicked");
-        }}
-      >
-        Format JSON
-      </button>
       {/* Button */}
       <button
         onClick={handleFormat}
@@ -64,6 +54,27 @@ export default function JsonFormatterClientPage() {
         Format JSON
       </button>
 
+      <button
+        style={{
+          marginTop: "10px",
+          padding: "10px 20px",
+          cursor: "pointer",
+        }}
+        onClick={() => setInput("")}
+      >
+        Clear
+      </button>
+
+      <button
+        style={{
+          marginTop: "10px",
+          padding: "10px 20px",
+          cursor: "pointer",
+        }}
+        onClick={() => navigator.clipboard.writeText(output)}
+      >
+        Copy Output
+      </button>
       {/* Error */}
       {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
 
