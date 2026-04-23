@@ -1,49 +1,6 @@
 import Link from "next/link";
-
-const tools = [
-  {
-    name: "JSON Formatter",
-    path: "/tools/json-formatter",
-    description: "Format and validate JSON data easily.",
-  },
-  {
-    name: "Word Counter",
-    path: "/tools/word-counter",
-    description: "Count words, characters and sentences instantly.",
-  },
-  {
-    name: "Case Converter",
-    path: "/tools/case-converter",
-    description: "Convert text to uppercase, lowercase and more.",
-  },
-  {
-    name: "Text Compare",
-    path: "/tools/text-compare",
-    description: "Compare two texts and find differences.",
-  },
-  {
-    name: "Base64 Tool",
-    path: "/tools/base64",
-    description: "Encode and decode Base64 strings.",
-  },
-
-  // Future tools (keep them visible for now)
-  {
-    name: "API Response Tester",
-    path: "#",
-    description: "Test API responses quickly (coming soon).",
-  },
-  {
-    name: "Webhook Tester",
-    path: "#",
-    description: "Test and debug webhooks (coming soon).",
-  },
-  {
-    name: "Image Optimizer",
-    path: "#",
-    description: "Compress and optimize images (coming soon).",
-  },
-];
+import { AllTools } from "../constant/varaiables";
+import React from "react";
 
 export const metadata = {
   title: "All Tools - Aaple Tools",
@@ -65,25 +22,53 @@ export default function ToolsPage() {
           marginTop: "20px",
         }}
       >
-        {tools.map((tool, index) => (
-          <div
-            key={index}
-            style={{
-              border: "1px solid #ccc",
-              padding: "16px",
-              borderRadius: "8px",
-            }}
-          >
-            <h3>{tool.name}</h3>
-            <p>{tool.description}</p>
+        {AllTools?.map((tool, index) =>
+          tool.comingSoon ? (
+            <React.Fragment key={index}>
+              {/* <h2>Available Tools</h2> */}
+              {/* map tools without comingSoon */}
+              <div
+                key={index}
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "16px",
+                  borderRadius: "8px",
+                }}
+              >
+                <h3>{tool.name}</h3>
+                <p>{tool.description}</p>
 
-            {tool.path === "#" ? (
-              <span style={{ color: "gray" }}>Coming Soon</span>
-            ) : (
-              <Link href={tool.path}>Open Tool →</Link>
-            )}
-          </div>
-        ))}
+                {tool.path === "#" ? (
+                  <span style={{ color: "gray" }}>Coming Soon</span>
+                ) : (
+                  <Link href={tool.path}>Open Tool →</Link>
+                )}
+              </div>
+            </React.Fragment>
+          ) : (
+            <React.Fragment key={index}>
+              {/* <h2 style={{ marginTop: "30px" }}>Coming Soon</h2> */}
+              {/* map tools with comingSoon */}
+              <div
+                key={index}
+                style={{
+                  border: "1px solid #ccc",
+                  padding: "16px",
+                  borderRadius: "8px",
+                }}
+              >
+                <h3>{tool.name}</h3>
+                <p>{tool.description}</p>
+
+                {tool.path === "#" ? (
+                  <span style={{ color: "gray" }}>Coming Soon</span>
+                ) : (
+                  <Link href={tool.path}>Open Tool →</Link>
+                )}
+              </div>
+            </React.Fragment>
+          )
+        )}
       </div>
     </main>
   );
