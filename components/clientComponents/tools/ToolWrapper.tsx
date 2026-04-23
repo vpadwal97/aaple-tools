@@ -8,13 +8,16 @@ export default function ToolWrapper({
   children: React.ReactNode;
 }) {
   return (
-    <main style={{ padding: "20px" }}>
-      <h1>{title}</h1>
-      <p>{description}</p>
+    <main className="max-w-3xl mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+        {title}
+      </h1>
 
-      <div style={{ marginTop: "10px" }}>{children}</div>
+      <p className="text-gray-600 dark:text-gray-400 mt-2">{description}</p>
 
-      <div style={{ marginTop: "20px" }}>
+      <div className="mt-6">{children}</div>
+
+      <div className="mt-3.5">
         <h2>How to Use</h2>
         <ul>
           <li>Enter your input</li>

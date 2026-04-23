@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { formatJSON } from "@/lib/jsonFormatter";
 import CopyButton from "@/components/CopyButton";
+import Button from "@/components/Button";
 
 export default function JsonFormatterClientPage() {
   const [input, setInput] = useState("");
@@ -35,52 +36,24 @@ export default function JsonFormatterClientPage() {
         placeholder="Paste your JSON here..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        style={{
-          width: "100%",
-          height: "150px",
-          marginTop: "10px",
-          padding: "10px",
-        }}
+        className="w-full h-36 p-2.5 mt-2.5"
       />
 
       {/* Button */}
-      <button
-        onClick={handleFormat}
-        style={{
-          marginTop: "10px",
-          padding: "10px 20px",
-          cursor: "pointer",
-        }}
-      >
-        Format JSON
-      </button>
+      <Button onClick={handleFormat}>Format JSON</Button>
 
-      <button
-        style={{
-          marginTop: "10px",
-          padding: "10px 20px",
-          cursor: "pointer",
-        }}
-        onClick={() => setInput("")}
-      >
-        Clear
-      </button>
+      <Button onClick={() => setInput("")}>Clear</Button>
 
       <CopyButton text={output} />
       {/* Error */}
-      {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
+      {error && <p className="text-red-500 mt-2">{error}</p>}
 
       {/* Output */}
       {output && (
         <textarea
           value={output}
           readOnly
-          style={{
-            width: "100%",
-            height: "150px",
-            marginTop: "10px",
-            padding: "10px",
-          }}
+          className="w-full h-36 p-2.5 mt-2.5"
         />
       )}
     </>

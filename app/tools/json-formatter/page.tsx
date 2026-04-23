@@ -2,8 +2,9 @@ import ToolWrapper from "@/components/clientComponents/tools/ToolWrapper";
 import JsonFormatterClientPage from "@/components/clientComponents/tools/json-formatter";
 
 export const metadata = {
-  title: "JSON Formatter - Free Online Tool",
-  description: "Format and validate JSON instantly with this free tool.",
+  title: "JSON Formatter Online Free | Format & Validate JSON Instantly",
+  description:
+    "Use this free JSON formatter to format, validate, and beautify JSON instantly. Fast, secure, and browser-based.",
 };
 
 export default function JsonFormatterPage() {

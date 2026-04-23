@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main style={{ padding: "20px" }}>
+    <main>
       <h1>About Us</h1>
 
       <p>

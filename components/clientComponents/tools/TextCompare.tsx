@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { compareText } from "@/lib/textCompare";
+import Button from "@/components/Button";
 
 export default function TextCompare() {
   const [text1, setText1] = useState("");
@@ -10,64 +11,53 @@ export default function TextCompare() {
   const result = compareText(text1, text2);
 
   return (
-    <div style={{ marginTop: "10px" }}>
+    <div className="mt-2.5">
       {/* Inputs */}
-      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <div className="mt-2.5 flex flex-wrap gap-2.5">
         <textarea
           placeholder="Enter first text..."
           value={text1}
           onChange={(e) => setText1(e.target.value)}
-          style={{ width: "100%", height: "120px", padding: "10px" }}
+          className="w-full h-36 p-2.5"
         />
 
         <textarea
           placeholder="Enter second text..."
           value={text2}
           onChange={(e) => setText2(e.target.value)}
-          style={{ width: "100%", height: "120px", padding: "10px" }}
+          className="w-full h-36 p-2.5"
         />
       </div>
 
       {/* Actions */}
-      <div style={{ marginTop: "10px" }}>
-        <button
+      <div className="mt-2.5">
+        <Button
           onClick={() => {
             setText1("");
             setText2("");
           }}
         >
           Clear
-        </button>
+        </Button>
       </div>
 
       {/* Result */}
-      <div
-        style={{
-          marginTop: "20px",
-          padding: "10px",
-          border: "1px solid #ddd",
-          borderRadius: "6px",
-        }}
-      >
+      <div className="mt-5 p-2.5 border border-gray-300 rounded-md">
         <p>
           <strong>Comparison Result:</strong>
         </p>
 
-        <div style={{ marginTop: "10px", lineHeight: "1.6" }}>
+        <div className="mt-2.5 leading-relaxed">
           {result.map((item, index) => (
             <span
               key={index}
-              style={{
-                background:
-                  item.type === "added"
-                    ? "#d4f8d4"
-                    : item.type === "removed"
-                    ? "#ffd6d6"
-                    : "transparent",
-                padding: "2px 4px",
-                marginRight: "4px",
-                borderRadius: "4px",
-              }}
+              className={`${
+                item.type === "added"
+                  ? "bg-green-200"
+                  : item.type === "removed"
+                  ? "bg-red-200"
+                  : "bg-transparent"
+              } p-1 mr-1 rounded`}
             >
               {item.value}
             </span>

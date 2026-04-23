@@ -24,26 +24,19 @@ export default function HomePage() {
         required.
       </p>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "16px",
-          marginTop: "20px",
-        }}
-      >
+      <div className="grid gap-4 mt-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {AllTools?.map((tool) =>
           tool.comingSoon ? null : (
             <Link
               key={tool.id}
               href={tool.path}
-              style={{
-                border: "1px solid #ccc",
-                padding: "16px",
-                borderRadius: "8px",
-                textDecoration: "none",
-                color: "inherit",
-              }}
+              className="
+  border border-gray-300 dark:border-gray-700
+  p-4 rounded-lg
+  transition-all duration-200 ease-in-out
+  hover:scale-105
+  hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10
+"
             >
               <h3>{tool.name}</h3>
               <p>Open tool →</p>

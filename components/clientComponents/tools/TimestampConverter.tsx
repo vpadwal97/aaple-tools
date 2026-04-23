@@ -17,29 +17,25 @@ export default function TimestampConverter() {
   }, [input]);
 
   return (
-    <div style={{ marginTop: "10px" }}>
+    <div className="mt-2.5">
       {/* Input */}
       <textarea
         placeholder="Enter Unix timestamp or date (e.g. 1710000000 or 2024-03-10)"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        style={{
-          width: "100%",
-          height: "100px",
-          padding: "10px",
-        }}
+        className="w-full h-36 p-2.5"
       />
       <button onClick={() => setInput(String(Date.now()))}>
         Use Current Time
       </button>
       {/* Clear */}
-      <div style={{ marginTop: "10px" }}>
+      <div className="mt-2.5">
         <button onClick={() => setInput("")}>Clear</button>
       </div>
 
       {/* Result */}
       {result && !result.error && (
-        <div style={{ marginTop: "20px" }}>
+        <div className="mt-3.5">
           {result.type === "unix" && (
             <>
               <p>
@@ -48,7 +44,7 @@ export default function TimestampConverter() {
               <textarea value={result.date} readOnly />
               <CopyButton text={result.date}>Copy</CopyButton>
 
-              <p style={{ marginTop: "10px" }}>
+              <p className="mt-2.5">
                 <strong>ISO Format:</strong>
               </p>
               <textarea value={result.iso} readOnly />
@@ -64,7 +60,7 @@ export default function TimestampConverter() {
               <textarea value={result.unixSeconds} readOnly />
               <CopyButton text={String(result.unixSeconds)}>Copy</CopyButton>
 
-              <p style={{ marginTop: "10px" }}>
+              <p className="mt-2.5">
                 <strong>Unix (milliseconds):</strong>
               </p>
               <textarea value={result.unixMilliseconds} readOnly />
@@ -77,9 +73,7 @@ export default function TimestampConverter() {
       )}
 
       {/* Error */}
-      {result?.error && (
-        <p style={{ color: "red", marginTop: "10px" }}>{result.error}</p>
-      )}
+      {result?.error && <p className="text-red-500 mt-2.5">{result.error}</p>}
     </div>
   );
 }

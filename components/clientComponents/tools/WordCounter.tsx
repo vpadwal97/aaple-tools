@@ -9,33 +9,22 @@ export default function WordCounter() {
   const stats = getWordStats(text);
 
   return (
-    <div style={{ marginTop: "10px" }}>
+    <div className="mt-2.5">
       {/* Input */}
       <textarea
         placeholder="Type or paste your text..."
         value={text}
         onChange={(e) => setText(e.target.value)}
-        style={{
-          width: "100%",
-          height: "150px",
-          padding: "10px",
-        }}
+        className="w-full h-36 p-2.5"
       />
 
       {/* Actions */}
-      <div style={{ marginTop: "10px" }}>
+      <div className="mt-2.5">
         <button onClick={() => setText("")}>Clear</button>
       </div>
 
       {/* Stats */}
-      <div
-        style={{
-          marginTop: "20px",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-          gap: "10px",
-        }}
-      >
+      <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
         <div>
           <strong>Words:</strong> {stats.words}
         </div>

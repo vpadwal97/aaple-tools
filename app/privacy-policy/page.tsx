@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main style={{ padding: "20px" }}>
+    <main className="p-4">
       <h1>Privacy Policy</h1>
 
       <p>

@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main style={{ padding: "20px" }}>
+    <main className="p-4">
       <h1>Contact Us</h1>
 
       <p>

@@ -22,21 +22,17 @@ export default function UrlEncoder() {
   };
 
   return (
-    <div style={{ marginTop: "10px" }}>
+    <div className="mt-2.5">
       {/* Input */}
       <textarea
         placeholder="Enter text or URL..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        style={{
-          width: "100%",
-          height: "120px",
-          padding: "10px",
-        }}
+        className="w-full h-36 p-2.5"
       />
 
       {/* Actions */}
-      <div style={{ marginTop: "10px", display: "flex", gap: "10px" }}>
+      <div className="mt-2.5 flex gap-2.5">
         <button onClick={handleEncode}>Encode</button>
         <button onClick={handleDecode}>Decode</button>
         <button onClick={handleClear}>Clear</button>
@@ -44,22 +40,14 @@ export default function UrlEncoder() {
 
       {/* Output */}
       {output && (
-        <div style={{ marginTop: "20px" }}>
+        <div className="mt-3.5">
           <p>
             <strong>Output:</strong>
           </p>
 
-          <textarea
-            value={output}
-            readOnly
-            style={{
-              width: "100%",
-              height: "120px",
-              padding: "10px",
-            }}
-          />
+          <textarea value={output} readOnly className="w-full h-36 p-2.5" />
 
-          <div style={{ marginTop: "10px" }}>
+          <div className="mt-2.5">
             <CopyButton text={output}>Copy Output</CopyButton>
           </div>
         </div>

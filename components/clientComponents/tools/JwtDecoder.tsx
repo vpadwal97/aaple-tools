@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { decodeJWT } from "@/lib/jwtDecoder";
 import CopyButton from "@/components/CopyButton";
+import Button from "@/components/Button";
 
 export default function JwtDecoder() {
   const [token, setToken] = useState("");
@@ -37,48 +38,40 @@ export default function JwtDecoder() {
   }, [token]);
 
   return (
-    <div style={{ marginTop: "10px" }}>
+    <div className="mt-2.5">
       {/* Input */}
       <textarea
         placeholder="Paste your JWT token here..."
         value={token}
         onChange={(e) => setToken(e.target.value)}
-        style={{ width: "100%", height: "120px", padding: "10px" }}
+        className="w-full h-36 p-2.5"
       />
 
       {/* Actions */}
-      <div style={{ marginTop: "10px", display: "flex", gap: "10px" }}>
-        <button onClick={handleDecode}>Decode</button>
-        <button onClick={handleClear}>Clear</button>
+      <div className="mt-2.5 flex gap-2.5">
+        <Button onClick={handleDecode}>Decode</Button>
+        <Button onClick={handleClear}>Clear</Button>
       </div>
 
       {/* Error */}
-      {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
+      {error && <p className="text-red-500 mt-2">{error}</p>}
 
       {/* Output */}
       {(header || payload) && (
-        <div style={{ marginTop: "20px" }}>
+        <div className="mt-3.5">
           <div>
             <p>
               <strong>Header:</strong>
             </p>
-            <textarea
-              value={header}
-              readOnly
-              style={{ width: "100%", height: "120px" }}
-            />
+            <textarea value={header} readOnly className="w-full h-36 p-2.5" />
             <CopyButton text={header}>Copy Header</CopyButton>
           </div>
 
-          <div style={{ marginTop: "15px" }}>
+          <div className="mt-2.5">
             <p>
               <strong>Payload:</strong>
             </p>
-            <textarea
-              value={payload}
-              readOnly
-              style={{ width: "100%", height: "120px" }}
-            />
+            <textarea value={payload} readOnly className="w-full h-36 p-2.5" />
             <CopyButton text={payload}>Copy Payload</CopyButton>
           </div>
         </div>

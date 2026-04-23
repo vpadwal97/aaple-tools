@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <main style={{ padding: "20px" }}>
+    <main className="p-4">
       <h1>Terms & Conditions</h1>
 
       <p>

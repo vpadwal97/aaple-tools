@@ -28,18 +28,22 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="border-b px-6 py-4 flex justify-between items-center">
-      <div className="font-bold text-xl">Aaple Tools</div>
+    <nav className="sticky top-0 z-2 border-b border-gray-200 dark:border-gray-800 px-6 py-4 flex justify-between items-center bg-white dark:bg-gray-900">
+      <div className="font-bold text-xl text-gray-900 dark:text-white">
+        Aaple Tools
+      </div>
 
-      <div className="flex gap-6 text-sm items-center">
+      <div className="flex gap-6 text-sm items-center text-gray-700 dark:text-gray-300">
         <Link href="/">Home</Link>
         <Link href="/tools">Tools</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
 
-        {/* Dark Mode Button */}
-        <button onClick={toggleTheme} className="px-3 py-1 border rounded">
-          {dark ? "🌙 Dark" : "☀️ Light"}
+        <button
+          onClick={toggleTheme}
+          className="px-3 py-1 border border-gray-300 dark:border-gray-700 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+        >
+          {dark ? "🌙" : "☀️"}
         </button>
       </div>
     </nav>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { convertCase } from "@/lib/caseConverter";
 import CopyButton from "@/components/CopyButton";
+import Button from "@/components/Button";
 
 export default function CaseConverter() {
   const [input, setInput] = useState("");
@@ -10,26 +11,22 @@ export default function CaseConverter() {
   const result = convertCase(input);
 
   return (
-    <div style={{ marginTop: "10px" }}>
+    <div className="mt-2.5">
       {/* Input */}
       <textarea
         placeholder="Enter text here..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        style={{
-          width: "100%",
-          height: "120px",
-          padding: "10px",
-        }}
+        className="w-full h-36 p-2.5"
       />
 
       {/* Buttons */}
-      <div style={{ marginTop: "10px", display: "flex", gap: "10px" }}>
-        <button onClick={() => setInput("")}>Clear</button>
+      <div className="mt-2.5 flex gap-2.5">
+        <Button onClick={() => setInput("")}>Clear</Button>
       </div>
 
       {/* Output */}
-      <div style={{ marginTop: "20px" }}>
+      <div className="mt-3.5">
         <p>
           <strong>UPPERCASE:</strong>
           <CopyButton text={result.upper} />

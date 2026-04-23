@@ -10,18 +10,11 @@ export const metadata = {
 
 export default function ToolsPage() {
   return (
-    <main style={{ padding: "20px" }}>
+    <main className="p-4">
       <h1>All Tools</h1>
       <p>Explore all available and upcoming tools.</p>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: "16px",
-          marginTop: "20px",
-        }}
-      >
+      <div className="grid gap-4 mt-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {AllTools?.map((tool, index) =>
           tool.comingSoon ? (
             <React.Fragment key={index}>
@@ -29,17 +22,21 @@ export default function ToolsPage() {
               {/* map tools without comingSoon */}
               <div
                 key={index}
-                style={{
-                  border: "1px solid #ccc",
-                  padding: "16px",
-                  borderRadius: "8px",
-                }}
+                className="
+  border border-gray-300 dark:border-gray-700
+  p-4 rounded-lg
+  transition-all duration-200 ease-in-out
+  hover:scale-105
+  hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10
+"
               >
                 <h3>{tool.name}</h3>
                 <p>{tool.description}</p>
 
                 {tool.path === "#" ? (
-                  <span style={{ color: "gray" }}>Coming Soon</span>
+                  <span className="text-gray-800 dark:text-gray-400">
+                    Coming Soon
+                  </span>
                 ) : (
                   <Link href={tool.path}>Open Tool →</Link>
                 )}
@@ -47,21 +44,23 @@ export default function ToolsPage() {
             </React.Fragment>
           ) : (
             <React.Fragment key={index}>
-              {/* <h2 style={{ marginTop: "30px" }}>Coming Soon</h2> */}
-              {/* map tools with comingSoon */}
               <div
                 key={index}
-                style={{
-                  border: "1px solid #ccc",
-                  padding: "16px",
-                  borderRadius: "8px",
-                }}
+                className="
+  border border-gray-300 dark:border-gray-700
+  p-4 rounded-lg
+  transition-all duration-200 ease-in-out
+  hover:scale-105
+  hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10
+"
               >
                 <h3>{tool.name}</h3>
                 <p>{tool.description}</p>
 
                 {tool.path === "#" ? (
-                  <span style={{ color: "gray" }}>Coming Soon</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    Coming Soon
+                  </span>
                 ) : (
                   <Link href={tool.path}>Open Tool →</Link>
                 )}

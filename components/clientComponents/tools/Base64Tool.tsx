@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { encodeBase64, decodeBase64 } from "@/lib/base64";
 import CopyButton from "@/components/CopyButton";
+import Button from "@/components/Button";
 
 export default function Base64Tool() {
   const [input, setInput] = useState("");
@@ -22,51 +23,32 @@ export default function Base64Tool() {
   };
 
   return (
-    <div style={{ marginTop: "10px" }}>
+    <div className="mt-2.5">
       {/* Input */}
       <textarea
         placeholder="Enter text or Base64..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        style={{
-          width: "100%",
-          height: "120px",
-          padding: "10px",
-        }}
+        className="w-full h-36 mt-2.5 p-2.5"
       />
 
       {/* Actions */}
-      <div
-        style={{
-          marginTop: "10px",
-          display: "flex",
-          gap: "10px",
-          flexWrap: "wrap",
-        }}
-      >
-        <button onClick={handleEncode}>Encode</button>
-        <button onClick={handleDecode}>Decode</button>
-        <button onClick={handleClear}>Clear</button>
+      <div className="mt-2.5 flex flex-wrap gap-3">
+        <Button onClick={handleEncode}>Encode</Button>
+        <Button onClick={handleDecode}>Decode</Button>
+        <Button onClick={handleClear}>Clear</Button>
       </div>
 
       {/* Output */}
       {output && (
-        <div style={{ marginTop: "20px" }}>
+        <div className="mt-3.5">
           <p>
             <strong>Output:</strong>
           </p>
 
-          <textarea
-            value={output}
-            readOnly
-            style={{
-              width: "100%",
-              height: "120px",
-              padding: "10px",
-            }}
-          />
+          <textarea value={output} readOnly className="w-full h-36 p-2.5" />
 
-          <div style={{ marginTop: "10px" }}>
+          <div className="mt-2.5">
             <CopyButton text={output}>Copy Output</CopyButton>
           </div>
         </div>

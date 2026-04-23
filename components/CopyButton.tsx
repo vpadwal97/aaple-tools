@@ -30,18 +30,7 @@ export default function CopyButton({ text, children }: Props) {
   if (!text) return null;
 
   return (
-    <button
-      onClick={handleCopy}
-      disabled={!text}
-      style={{
-        cursor: text ? "pointer" : "not-allowed",
-        border: "1px solid #ddd",
-        padding: "6px 12px",
-        borderRadius: "6px",
-        background: copied ? "#16a34a" : "#fff",
-        color: copied ? "#fff" : "#333",
-      }}
-    >
+    <button onClick={handleCopy} disabled={!text}>
       {copied ? "Copied!" : children || "Copy"}
     </button>
   );
