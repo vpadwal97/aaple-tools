@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main>
+    <>
       <h1>Free Online Tools</h1>
       <p>
         Simple, fast and free tools for developers and daily use. No login
@@ -44,6 +44,6 @@ export default function HomePage() {
           )
         )}
       </div>
-    </main>
+    </>
   );
 }

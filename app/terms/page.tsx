@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="p-4">
+    <>
       <h1>Terms & Conditions</h1>
 
       <p>
@@ -29,6 +29,6 @@ export default function TermsPage() {
 
       <h2>Changes</h2>
       <p>We may update these terms at any time without prior notice.</p>
-    </main>
+    </>
   );
 }

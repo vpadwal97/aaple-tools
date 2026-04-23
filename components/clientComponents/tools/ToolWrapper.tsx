@@ -8,7 +8,7 @@ export default function ToolWrapper({
   children: React.ReactNode;
 }) {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-8">
+    <div className="max-w-3xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
         {title}
       </h1>
@@ -25,6 +25,6 @@ export default function ToolWrapper({
           <li>Get result instantly</li>
         </ul>
       </div>
-    </main>
+    </div>
   );
 }

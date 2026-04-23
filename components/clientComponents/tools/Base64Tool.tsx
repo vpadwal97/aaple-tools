@@ -23,10 +23,12 @@ export default function Base64Tool() {
   };
 
   return (
-    <div className="mt-2.5">
+    <div className="space-x-3 space-y-4">
       {/* Input */}
       <textarea
         placeholder="Enter text or Base64..."
+        id="input"
+        name="input"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         className="w-full h-36 mt-2.5 p-2.5"
@@ -45,9 +47,13 @@ export default function Base64Tool() {
           <p>
             <strong>Output:</strong>
           </p>
-
-          <textarea value={output} readOnly className="w-full h-36 p-2.5" />
-
+          <textarea
+            id="output"
+            name="output"
+            value={output}
+            readOnly
+            className="w-full h-36 p-2.5"
+          />
           <div className="mt-2.5">
             <CopyButton text={output}>Copy Output</CopyButton>
           </div>

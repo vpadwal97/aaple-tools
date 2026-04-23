@@ -31,26 +31,32 @@ export default function JsonFormatterClientPage() {
   }, [input]);
   return (
     <>
-      {/* Input */}
-      <textarea
-        placeholder="Paste your JSON here..."
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        className="w-full h-36 p-2.5 mt-2.5"
-      />
+      <div className="space-x-3 space-y-4">
+        {/* Input */}
+        <textarea
+          placeholder="Paste your JSON here..."
+          id="input"
+          name="input"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          className="w-full h-36 p-2.5"
+        />
 
-      {/* Button */}
-      <Button onClick={handleFormat}>Format JSON</Button>
+        {/* Button */}
+        <Button onClick={handleFormat}>Format JSON</Button>
 
-      <Button onClick={() => setInput("")}>Clear</Button>
+        <Button onClick={() => setInput("")}>Clear</Button>
 
-      <CopyButton text={output} />
-      {/* Error */}
+        <CopyButton text={output} />
+        {/* Error */}
+      </div>
       {error && <p className="text-red-500 mt-2">{error}</p>}
 
       {/* Output */}
       {output && (
         <textarea
+          id="output"
+          name="output"
           value={output}
           readOnly
           className="w-full h-36 p-2.5 mt-2.5"

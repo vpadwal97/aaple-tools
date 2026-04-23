@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="p-4">
+    <>
       <h1>Privacy Policy</h1>
 
       <p>
@@ -32,6 +32,6 @@ export default function PrivacyPolicyPage() {
 
       <h2>Contact</h2>
       <p>For any privacy-related concerns, contact us via the Contact page.</p>
-    </main>
+    </>
   );
 }

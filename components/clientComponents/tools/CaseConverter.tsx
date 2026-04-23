@@ -11,11 +11,13 @@ export default function CaseConverter() {
   const result = convertCase(input);
 
   return (
-    <div className="mt-2.5">
+    <div className="space-x-3 space-y-4">
       {/* Input */}
       <textarea
         placeholder="Enter text here..."
         value={input}
+        id="input"
+        name="input"
         onChange={(e) => setInput(e.target.value)}
         className="w-full h-36 p-2.5"
       />
@@ -31,27 +33,27 @@ export default function CaseConverter() {
           <strong>UPPERCASE:</strong>
           <CopyButton text={result.upper} />
         </p>
-        <textarea value={result.upper} readOnly />
+        <textarea value={result.upper} id="upper" name="upper" readOnly />
         <p>
           <strong>lowercase:</strong>
           <CopyButton text={result.lower} />
         </p>
-        <textarea value={result.lower} readOnly />
+        <textarea value={result.lower} id="lower" name="lower" readOnly />
         <p>
           <strong>Title Case:</strong>
           <CopyButton text={result.title} />
         </p>
-        <textarea value={result.title} readOnly />
+        <textarea value={result.title} id="title" name="title" readOnly />
         <p>
           <strong>camelCase:</strong>
           <CopyButton text={result.camel} />
         </p>
-        <textarea value={result.camel} readOnly />
+        <textarea value={result.camel} id="camel" name="camel" readOnly />
         <p>
           <strong>snake_case:</strong>
           <CopyButton text={result.snake} />
         </p>
-        <textarea value={result.snake} readOnly />
+        <textarea value={result.snake} id="snake" name="snake" readOnly />
       </div>
     </div>
   );

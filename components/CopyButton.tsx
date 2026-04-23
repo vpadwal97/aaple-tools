@@ -30,7 +30,11 @@ export default function CopyButton({ text, children }: Props) {
   if (!text) return null;
 
   return (
-    <button onClick={handleCopy} disabled={!text}>
+    <button
+      onClick={handleCopy}
+      disabled={!text}
+      className="p-2 cursor-pointer"
+    >
       {copied ? "Copied!" : children || "Copy"}
     </button>
   );

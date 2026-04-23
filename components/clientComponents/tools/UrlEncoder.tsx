@@ -26,6 +26,8 @@ export default function UrlEncoder() {
       {/* Input */}
       <textarea
         placeholder="Enter text or URL..."
+        id="text"
+        name="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         className="w-full h-36 p-2.5"
@@ -45,7 +47,13 @@ export default function UrlEncoder() {
             <strong>Output:</strong>
           </p>
 
-          <textarea value={output} readOnly className="w-full h-36 p-2.5" />
+          <textarea
+            id="output"
+            name="output"
+            value={output}
+            readOnly
+            className="w-full h-36 p-2.5"
+          />
 
           <div className="mt-2.5">
             <CopyButton text={output}>Copy Output</CopyButton>

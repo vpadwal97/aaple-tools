@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function ToolsPage() {
   return (
-    <main className="p-4">
+    <>
       <h1>All Tools</h1>
       <p>Explore all available and upcoming tools.</p>
 
@@ -69,6 +69,6 @@ export default function ToolsPage() {
           )
         )}
       </div>
-    </main>
+    </>
   );
 }

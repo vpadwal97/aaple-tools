@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
+    <>
       <h1>About Us</h1>
 
       <p>
@@ -30,6 +30,6 @@ export default function AboutPage() {
         To build useful tools that save time and improve productivity for
         everyone.
       </p>
-    </main>
+    </>
   );
 }

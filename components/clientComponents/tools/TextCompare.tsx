@@ -17,6 +17,8 @@ export default function TextCompare() {
         <textarea
           placeholder="Enter first text..."
           value={text1}
+          id="text1"
+          name="text1"
           onChange={(e) => setText1(e.target.value)}
           className="w-full h-36 p-2.5"
         />
@@ -24,6 +26,8 @@ export default function TextCompare() {
         <textarea
           placeholder="Enter second text..."
           value={text2}
+          id="text2"
+          name="text2"
           onChange={(e) => setText2(e.target.value)}
           className="w-full h-36 p-2.5"
         />

@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="p-4">
+    <div className="p-4">
       <h1>Contact Us</h1>
 
       <p>
@@ -20,6 +20,6 @@ export default function ContactPage() {
       </p>
 
       <p>We usually respond within 24-48 hours.</p>
-    </main>
+    </div>
   );
 }

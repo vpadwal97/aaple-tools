@@ -42,6 +42,8 @@ export default function JwtDecoder() {
       {/* Input */}
       <textarea
         placeholder="Paste your JWT token here..."
+        id="token"
+        name="token"
         value={token}
         onChange={(e) => setToken(e.target.value)}
         className="w-full h-36 p-2.5"
@@ -63,7 +65,13 @@ export default function JwtDecoder() {
             <p>
               <strong>Header:</strong>
             </p>
-            <textarea value={header} readOnly className="w-full h-36 p-2.5" />
+            <textarea
+              id="header"
+              name="header"
+              value={header}
+              readOnly
+              className="w-full h-36 p-2.5"
+            />
             <CopyButton text={header}>Copy Header</CopyButton>
           </div>
 
@@ -71,7 +79,13 @@ export default function JwtDecoder() {
             <p>
               <strong>Payload:</strong>
             </p>
-            <textarea value={payload} readOnly className="w-full h-36 p-2.5" />
+            <textarea
+              id="payload"
+              name="payload"
+              value={payload}
+              readOnly
+              className="w-full h-36 p-2.5"
+            />
             <CopyButton text={payload}>Copy Payload</CopyButton>
           </div>
         </div>

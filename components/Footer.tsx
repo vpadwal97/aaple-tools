@@ -21,7 +21,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="py-10 px-5 mt-16 border-t border-slate-800">
+    <footer className="pt-10 px-5 mt-16 border-t border-slate-800">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {/* Brand Section */}
         <div>
@@ -52,7 +52,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-slate-800 mt-8 pt-4 text-center text-xs text-gray-600 dark:text-gray-300">
+      <div className="border-t border-slate-800 mt-8 py-4 text-center text-xs text-gray-600 dark:text-gray-300">
         © {new Date().getFullYear()} Aaple Tools. All rights reserved.
       </div>
     </footer>
