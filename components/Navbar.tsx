@@ -41,12 +41,19 @@ export default function Navbar() {
           <Link href="/tools">Tools</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
-
           <button
             onClick={toggleTheme}
-            className="px-3 py-1 border border-gray-300 dark:border-gray-700 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+            className={`relative w-14 h-7 flex items-center rounded-full p-1 transition-colors duration-300 ${
+              dark ? "bg-gray-800" : "bg-gray-300"
+            }`}
           >
-            {dark ? "🌙" : "☀️"}
+            <div
+              className={`w-5 h-5 bg-white rounded-full shadow-md flex items-center justify-center text-[10px] transition-transform duration-300 ${
+                dark ? "translate-x-7" : "translate-x-0"
+              }`}
+            >
+              {dark ? "🌙" : "☀️"}
+            </div>
           </button>
         </div>
 
@@ -74,15 +81,19 @@ export default function Navbar() {
           <Link href="/contact" onClick={() => setOpen(false)}>
             Contact
           </Link>
-
           <button
-            onClick={() => {
-              toggleTheme();
-              setOpen(false);
-            }}
-            className="mt-2 px-3 py-1 border border-gray-300 dark:border-gray-700 rounded"
+            onClick={toggleTheme}
+            className={`relative w-14 h-7 flex items-center rounded-full p-1 transition-colors duration-300 ${
+              dark ? "bg-gray-800" : "bg-gray-300"
+            }`}
           >
-            {dark ? "🌙 Dark Mode" : "☀️ Light Mode"}
+            <div
+              className={`w-5 h-5 bg-white rounded-full shadow-md flex items-center justify-center text-[10px] transition-transform duration-300 ${
+                dark ? "translate-x-7" : "translate-x-0"
+              }`}
+            >
+              {dark ? "🌙" : "☀️"}
+            </div>
           </button>
         </div>
       )}
