@@ -31,7 +31,7 @@ export default function Base64Tool() {
         name="input"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        className="w-full h-36 mt-2.5 p-2.5"
+        className="textarea-base w-full h-36 mt-2.5 p-2.5"
       />
 
       {/* Actions */}
@@ -52,7 +52,7 @@ export default function Base64Tool() {
             name="output"
             value={output}
             readOnly
-            className="w-full h-36 p-2.5"
+            className="textarea-base w-full h-36 p-2.5"
           />
           <div className="mt-2.5">
             <CopyButton text={output}>Copy Output</CopyButton>

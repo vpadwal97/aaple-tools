@@ -1,5 +1,6 @@
 import ToolWrapper from "@/components/clientComponents/tools/ToolWrapper";
 import JwtDecoder from "@/components/clientComponents/tools/JwtDecoder";
+import { toolSeo } from "@/lib/toolSeo";
 
 export const metadata = {
   title: "JWT Decoder Online Free | Decode JSON Web Tokens Instantly",
@@ -7,12 +8,11 @@ export const metadata = {
     "Decode JWT tokens and view header and payload instantly using this free online JWT decoder.",
 };
 
+const seo = toolSeo["jwt-decoder"];
+
 export default function Page() {
   return (
-    <ToolWrapper
-      title="JWT Decoder"
-      description="Decode JWT tokens and inspect header and payload easily."
-    >
+    <ToolWrapper seo={seo}>
       <JwtDecoder />
       <hr className="my-3" />
 

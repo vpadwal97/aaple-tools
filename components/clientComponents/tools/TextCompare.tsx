@@ -20,7 +20,7 @@ export default function TextCompare() {
           id="text1"
           name="text1"
           onChange={(e) => setText1(e.target.value)}
-          className="w-full h-36 p-2.5"
+          className="textarea-base w-full h-36 p-2.5"
         />
 
         <textarea
@@ -29,7 +29,7 @@ export default function TextCompare() {
           id="text2"
           name="text2"
           onChange={(e) => setText2(e.target.value)}
-          className="w-full h-36 p-2.5"
+          className="textarea-base w-full h-36 p-2.5"
         />
       </div>
 

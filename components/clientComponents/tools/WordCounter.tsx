@@ -17,7 +17,7 @@ export default function WordCounter() {
         id="text"
         name="text"
         onChange={(e) => setText(e.target.value)}
-        className="w-full h-36 p-2.5"
+        className="textarea-base w-full h-36 p-2.5"
       />
 
       {/* Actions */}

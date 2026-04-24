@@ -39,7 +39,7 @@ export default function JsonFormatterClientPage() {
           name="input"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="w-full h-36 p-2.5"
+          className="textarea-base w-full h-36 p-2.5"
         />
 
         {/* Button */}
@@ -59,7 +59,7 @@ export default function JsonFormatterClientPage() {
           name="output"
           value={output}
           readOnly
-          className="w-full h-36 p-2.5 mt-2.5"
+          className="textarea-base w-full h-36 p-2.5 mt-2.5"
         />
       )}
     </>
