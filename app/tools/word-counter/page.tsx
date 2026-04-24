@@ -1,3 +1,5 @@
+import { AllTools } from "@/app/constant/varaiables";
+import ToolsList from "@/components/ToolsList";
 import ToolWrapper from "@/components/clientComponents/tools/ToolWrapper";
 import WordCounter from "@/components/clientComponents/tools/WordCounter";
 import { toolSeo } from "@/lib/toolSeo";
@@ -11,22 +13,14 @@ const seo = toolSeo["word-counter"];
 
 export default function Page() {
   return (
-    <ToolWrapper seo={seo}>
-      <WordCounter />
-      <hr className="my-3" />
-
-      <h2>What is a Word Counter?</h2>
-      <p>
-        A word counter helps you count words, characters, and sentences in your
-        text.
-      </p>
-
-      <h2>Features</h2>
-      <ul>
-        <li>Real-time counting</li>
-        <li>Character tracking</li>
-        <li>Reading time estimation</li>
-      </ul>
-    </ToolWrapper>
+    <>
+      <ToolWrapper seo={seo}>
+        <WordCounter />
+      </ToolWrapper>
+      <aside className="sidebar mt-8 max-w-screen-xl">
+        <h3 className="text-lg font-semibold mb-2">Try Other Useful Tools</h3>
+        <ToolsList tools={AllTools} />
+      </aside>
+    </>
   );
 }

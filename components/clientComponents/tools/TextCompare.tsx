@@ -57,9 +57,9 @@ export default function TextCompare() {
               key={index}
               className={`${
                 item.type === "added"
-                  ? "bg-green-200"
+                  ? "bg-green-200 dark:bg-green-800"
                   : item.type === "removed"
-                  ? "bg-red-200"
+                  ? "bg-red-200 dark:bg-red-800"
                   : "bg-transparent"
               } p-1 mr-1 rounded`}
             >

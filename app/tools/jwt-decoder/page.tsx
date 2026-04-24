@@ -1,6 +1,8 @@
 import ToolWrapper from "@/components/clientComponents/tools/ToolWrapper";
 import JwtDecoder from "@/components/clientComponents/tools/JwtDecoder";
 import { toolSeo } from "@/lib/toolSeo";
+import ToolsList from "@/components/ToolsList";
+import { AllTools } from "@/app/constant/varaiables";
 
 export const metadata = {
   title: "JWT Decoder Online Free | Decode JSON Web Tokens Instantly",
@@ -12,22 +14,14 @@ const seo = toolSeo["jwt-decoder"];
 
 export default function Page() {
   return (
-    <ToolWrapper seo={seo}>
-      <JwtDecoder />
-      <hr className="my-3" />
-
-      <h2>What is JWT?</h2>
-      <p>
-        JWT (JSON Web Token) is used for secure data transmission between
-        systems.
-      </p>
-
-      <h2>What Can You Do?</h2>
-      <ul>
-        <li>Decode header</li>
-        <li>Inspect payload</li>
-        <li>Debug authentication</li>
-      </ul>
-    </ToolWrapper>
+    <>
+      <ToolWrapper seo={seo}>
+        <JwtDecoder />
+      </ToolWrapper>
+      <aside className="sidebar mt-8 max-w-screen-xl">
+        <h3 className="text-lg font-semibold mb-2">Try Other Useful Tools</h3>
+        <ToolsList tools={AllTools} />
+      </aside>
+    </>
   );
 }

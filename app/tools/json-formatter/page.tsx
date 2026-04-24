@@ -18,7 +18,7 @@ export default function JsonFormatterPage() {
       <ToolWrapper seo={seo}>
         <JsonFormatterClientPage />
       </ToolWrapper>
-      <aside className="sidebar mt-8">
+      <aside className="sidebar mt-8 max-w-screen-xl">
         <h3 className="text-lg font-semibold mb-2">Try Other Useful Tools</h3>
         <ToolsList tools={AllTools} />
       </aside>

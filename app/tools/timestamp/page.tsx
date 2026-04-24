@@ -1,6 +1,8 @@
 import ToolWrapper from "@/components/clientComponents/tools/ToolWrapper";
 import TimestampConverter from "@/components/clientComponents/tools/TimestampConverter";
 import { toolSeo } from "@/lib/toolSeo";
+import ToolsList from "@/components/ToolsList";
+import { AllTools } from "@/app/constant/varaiables";
 
 export const metadata = {
   title: "Timestamp Converter Online Free | Unix to Date Converter",
@@ -11,19 +13,14 @@ const seo = toolSeo["timestamp"];
 
 export default function Page() {
   return (
-    <ToolWrapper seo={seo}>
-      <TimestampConverter />
-      <hr className="my-3" />
-
-      <h2>What is a Timestamp?</h2>
-      <p>A timestamp represents a specific point in time.</p>
-
-      <h2>Features</h2>
-      <ul>
-        <li>Unix to date conversion</li>
-        <li>Date to Unix conversion</li>
-        <li>Instant results</li>
-      </ul>
-    </ToolWrapper>
+    <>
+      <ToolWrapper seo={seo}>
+        <TimestampConverter />
+      </ToolWrapper>
+      <aside className="sidebar mt-8 max-w-screen-xl">
+        <h3 className="text-lg font-semibold mb-2">Try Other Useful Tools</h3>
+        <ToolsList tools={AllTools} />
+      </aside>
+    </>
   );
 }

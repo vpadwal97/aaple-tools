@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { convertTimestamp } from "@/lib/timestamps";
 import CopyButton from "@/components/CopyButton";
+import Button from "@/components/Button";
+import { ResultBox } from "@/components/ResultBox";
 
 export default function TimestampConverter() {
   const [input, setInput] = useState("");
@@ -27,73 +29,51 @@ export default function TimestampConverter() {
         onChange={(e) => setInput(e.target.value)}
         className="textarea-base w-full h-36 p-2.5"
       />
-      <button onClick={() => setInput(String(Date.now()))}>
-        Use Current Time
-      </button>
-      {/* Clear */}
-      <div className="mt-2.5">
-        <button onClick={() => setInput("")}>Clear</button>
+      <div className="mt-2.5 mt-2.5 grid md:grid-cols-2 sm:grid-cols-1 gap-3">
+        <Button onClick={() => setInput(String(Date.now()))}>
+          Use Current Time
+        </Button>
+        {/* Clear */}
+        <Button onClick={() => setInput("")}>Clear</Button>
       </div>
 
       {/* Result */}
       {result && !result.error && (
-        <div className="mt-3.5">
+        <div className="mt-2.5">
           {result.type === "unix" && (
-            <>
-              <p>
-                <strong>Readable Date:</strong>
-              </p>
-              <textarea
-                className="textarea-base "
+            <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-3">
+              <ResultBox
+                label="Readable Date"
+                value={result.date}
                 id="date"
                 name="date"
-                value={result.date}
-                readOnly
               />
-              <CopyButton text={result.date}>Copy</CopyButton>
 
-              <p className="mt-2.5">
-                <strong>ISO Format:</strong>
-              </p>
-              <textarea
-                className="textarea-base "
+              <ResultBox
+                label="ISO Format"
+                value={result.iso}
                 id="iso"
                 name="iso"
-                value={result.iso}
-                readOnly
               />
-              <CopyButton text={result.iso}>Copy</CopyButton>
-            </>
+            </div>
           )}
 
           {result.type === "date" && (
-            <>
-              <p>
-                <strong>Unix (seconds):</strong>
-              </p>
-              <textarea
-                className="textarea-base "
+            <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-3">
+              <ResultBox
+                label="Unix (seconds)"
+                value={String(result.unixSeconds)}
                 id="unixSeconds"
                 name="unixSeconds"
-                value={result.unixSeconds}
-                readOnly
               />
-              <CopyButton text={String(result.unixSeconds)}>Copy</CopyButton>
 
-              <p className="mt-2.5">
-                <strong>Unix (milliseconds):</strong>
-              </p>
-              <textarea
-                className="textarea-base "
+              <ResultBox
+                label="Unix (milliseconds)"
+                value={String(result.unixMilliseconds)}
                 id="unixMilliseconds"
                 name="unixMilliseconds"
-                value={result.unixMilliseconds}
-                readOnly
               />
-              <CopyButton text={String(result.unixMilliseconds)}>
-                Copy
-              </CopyButton>
-            </>
+            </div>
           )}
         </div>
       )}

@@ -1,6 +1,8 @@
 import ToolWrapper from "@/components/clientComponents/tools/ToolWrapper";
 import Base64Tool from "@/components/clientComponents/tools/Base64Tool";
 import { toolSeo } from "@/lib/toolSeo";
+import ToolsList from "@/components/ToolsList";
+import { AllTools } from "@/app/constant/varaiables";
 
 export const metadata = {
   title: "Base64 Encoder & Decoder Online Free | Encode & Decode Instantly",
@@ -11,19 +13,14 @@ const seo = toolSeo["base64"];
 
 export default function Page() {
   return (
-    <ToolWrapper seo={seo}>
-      <Base64Tool />
-      <hr className="my-3" />
-
-      <h2>What is Base64 Encoding?</h2>
-      <p>Base64 encoding converts binary data into text format.</p>
-
-      <h2>Why Use It?</h2>
-      <ul>
-        <li>Data transmission</li>
-        <li>API usage</li>
-        <li>Encoding binary data</li>
-      </ul>
-    </ToolWrapper>
+    <>
+      <ToolWrapper seo={seo}>
+        <Base64Tool />
+      </ToolWrapper>
+      <aside className="sidebar mt-8 max-w-screen-xl">
+        <h3 className="text-lg font-semibold mb-2">Try Other Useful Tools</h3>
+        <ToolsList tools={AllTools} />
+      </aside>
+    </>
   );
 }

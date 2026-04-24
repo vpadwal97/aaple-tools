@@ -4,6 +4,7 @@ import { useState } from "react";
 import { convertCase } from "@/lib/caseConverter";
 import CopyButton from "@/components/CopyButton";
 import Button from "@/components/Button";
+import { ResultBox } from "@/components/ResultBox";
 
 export default function CaseConverter() {
   const [input, setInput] = useState("");
@@ -28,61 +29,45 @@ export default function CaseConverter() {
       </div>
 
       {/* Output */}
-      <div className="mt-3.5">
-        <p>
-          <strong>UPPERCASE:</strong>
-          <CopyButton text={result.upper} />
-        </p>
-        <textarea
-          className="textarea-base "
+      <div className="mt-3.5 grid md:grid-cols-2 sm:grid-cols-1 gap-4">
+        <ResultBox
+          label="UPPERCASE"
           value={result.upper}
-          id="upper"
-          name="upper"
-          readOnly
+          id="uppercase"
+          name="uppercase"
+          heightClass="h-25"
         />
-        <p>
-          <strong>lowercase:</strong>
-          <CopyButton text={result.lower} />
-        </p>
-        <textarea
-          className="textarea-base "
+
+        <ResultBox
+          label="lowercase"
           value={result.lower}
-          id="lower"
-          name="lower"
-          readOnly
+          id="lowercase"
+          name="lowercase"
+          heightClass="h-25"
         />
-        <p>
-          <strong>Title Case:</strong>
-          <CopyButton text={result.title} />
-        </p>
-        <textarea
-          className="textarea-base "
+
+        <ResultBox
+          label="Title Case"
           value={result.title}
           id="title"
           name="title"
-          readOnly
+          heightClass="h-25"
         />
-        <p>
-          <strong>camelCase:</strong>
-          <CopyButton text={result.camel} />
-        </p>
-        <textarea
-          className="textarea-base "
+
+        <ResultBox
+          label="camelCase"
           value={result.camel}
-          id="camel"
-          name="camel"
-          readOnly
+          id="camelcase"
+          name="camelcase"
+          heightClass="h-25"
         />
-        <p>
-          <strong>snake_case:</strong>
-          <CopyButton text={result.snake} />
-        </p>
-        <textarea
-          className="textarea-base "
+
+        <ResultBox
+          label="snake_case"
           value={result.snake}
-          id="snake"
-          name="snake"
-          readOnly
+          id="snake_case"
+          name="snake_case"
+          heightClass="h-25"
         />
       </div>
     </div>

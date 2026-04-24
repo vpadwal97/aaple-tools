@@ -1,6 +1,8 @@
 import ToolWrapper from "@/components/clientComponents/tools/ToolWrapper";
 import TextCompare from "@/components/clientComponents/tools/TextCompare";
 import { toolSeo } from "@/lib/toolSeo";
+import ToolsList from "@/components/ToolsList";
+import { AllTools } from "@/app/constant/varaiables";
 
 export const metadata = {
   title: "Text Compare Tool Online Free | Find Differences Instantly",
@@ -11,19 +13,14 @@ const seo = toolSeo["text-compare"];
 
 export default function Page() {
   return (
-    <ToolWrapper seo={seo}>
-      <TextCompare />
-      <hr className="my-3" />
-
-      <h2>What is Text Comparison?</h2>
-      <p>Text comparison helps identify differences between two texts.</p>
-
-      <h2>Use Cases</h2>
-      <ul>
-        <li>Code comparison</li>
-        <li>Document changes</li>
-        <li>Content editing</li>
-      </ul>
-    </ToolWrapper>
+    <>
+      <ToolWrapper seo={seo}>
+        <TextCompare />
+      </ToolWrapper>
+      <aside className="sidebar mt-8 max-w-screen-xl">
+        <h3 className="text-lg font-semibold mb-2">Try Other Useful Tools</h3>
+        <ToolsList tools={AllTools} />
+      </aside>
+    </>
   );
 }

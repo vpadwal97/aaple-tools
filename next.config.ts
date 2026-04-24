@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  allowedDevOrigins: ["*.csb.app", "*.codesandbox.io", "*.preview.csb.app"],
+  allowedDevOrigins: [
+    "*.csb.app",
+    "*.codesandbox.io",
+    "*.preview.csb.app",
+    "*.vercel.app",
+  ],
   // reactCompiler: true,
 };
 

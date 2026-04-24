@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { encodeURL, decodeURL } from "@/lib/urlEncoder";
 import CopyButton from "@/components/CopyButton";
+import Button from "@/components/Button";
+import { ResultBox } from "@/components/ResultBox";
 
 export default function UrlEncoder() {
   const [input, setInput] = useState("");
@@ -30,34 +32,26 @@ export default function UrlEncoder() {
         name="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        className="textarea-base w-full h-36 p-2.5"
+        className="textarea-base w-full h-40 p-2.5"
       />
 
       {/* Actions */}
-      <div className="mt-2.5 flex gap-2.5">
-        <button onClick={handleEncode}>Encode</button>
-        <button onClick={handleDecode}>Decode</button>
-        <button onClick={handleClear}>Clear</button>
+      <div className="mt-2.5 grid md:grid-cols-3 sm:grid-cols-1 gap-3">
+        <Button onClick={handleEncode}>Encode</Button>
+        <Button onClick={handleDecode}>Decode</Button>
+        <Button onClick={handleClear}>Clear</Button>
       </div>
 
       {/* Output */}
       {output && (
         <div className="mt-3.5">
-          <p>
-            <strong>Output:</strong>
-          </p>
-
-          <textarea
+          <ResultBox
+            label="Output:"
+            value={output}
             id="output"
             name="output"
-            value={output}
-            readOnly
-            className="textarea-base w-full h-36 p-2.5"
+            heightClass="h-40"
           />
-
-          <div className="mt-2.5">
-            <CopyButton text={output}>Copy Output</CopyButton>
-          </div>
         </div>
       )}
     </div>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { decodeJWT } from "@/lib/jwtDecoder";
 import CopyButton from "@/components/CopyButton";
 import Button from "@/components/Button";
+import { ResultBox } from "@/components/ResultBox";
 
 export default function JwtDecoder() {
   const [token, setToken] = useState("");
@@ -46,11 +47,11 @@ export default function JwtDecoder() {
         name="token"
         value={token}
         onChange={(e) => setToken(e.target.value)}
-        className="textarea-base w-full h-36 p-2.5"
+        className="textarea-base w-full h-40 p-2.5"
       />
 
       {/* Actions */}
-      <div className="mt-2.5 flex gap-2.5">
+      <div className="mt-2.5 grid md:grid-cols-2 sm:grid-cols-1 gap-3">
         <Button onClick={handleDecode}>Decode</Button>
         <Button onClick={handleClear}>Clear</Button>
       </div>
@@ -60,34 +61,21 @@ export default function JwtDecoder() {
 
       {/* Output */}
       {(header || payload) && (
-        <div className="mt-3.5">
-          <div>
-            <p>
-              <strong>Header:</strong>
-            </p>
-            <textarea
-              id="header"
-              name="header"
-              value={header}
-              readOnly
-              className="textarea-base w-full h-36 p-2.5"
-            />
-            <CopyButton text={header}>Copy Header</CopyButton>
-          </div>
-
-          <div className="mt-2.5">
-            <p>
-              <strong>Payload:</strong>
-            </p>
-            <textarea
-              id="payload"
-              name="payload"
-              value={payload}
-              readOnly
-              className="textarea-base w-full h-36 p-2.5"
-            />
-            <CopyButton text={payload}>Copy Payload</CopyButton>
-          </div>
+        <div className="mt-3.5 space-y-2.5 grid md:grid-cols-2 sm:grid-cols-1 gap-3">
+          <ResultBox
+            label="Header:"
+            value={header}
+            id="header"
+            name="header"
+            heightClass="h-36"
+          />
+          <ResultBox
+            label="Payload:"
+            value={payload}
+            id="payload"
+            name="payload"
+            heightClass="h-36"
+          />
         </div>
       )}
     </div>

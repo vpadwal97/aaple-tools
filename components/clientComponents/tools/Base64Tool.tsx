@@ -4,6 +4,7 @@ import { useState } from "react";
 import { encodeBase64, decodeBase64 } from "@/lib/base64";
 import CopyButton from "@/components/CopyButton";
 import Button from "@/components/Button";
+import { ResultBox } from "@/components/ResultBox";
 
 export default function Base64Tool() {
   const [input, setInput] = useState("");
@@ -35,7 +36,7 @@ export default function Base64Tool() {
       />
 
       {/* Actions */}
-      <div className="mt-2.5 flex flex-wrap gap-3">
+      <div className="mt-2.5 grid md:grid-cols-3 sm:grid-cols-1 gap-3">
         <Button onClick={handleEncode}>Encode</Button>
         <Button onClick={handleDecode}>Decode</Button>
         <Button onClick={handleClear}>Clear</Button>
@@ -44,19 +45,13 @@ export default function Base64Tool() {
       {/* Output */}
       {output && (
         <div className="mt-3.5">
-          <p>
-            <strong>Output:</strong>
-          </p>
-          <textarea
+          <ResultBox
+            label="Output:"
+            value={output}
             id="output"
             name="output"
-            value={output}
-            readOnly
-            className="textarea-base w-full h-36 p-2.5"
+            heightClass="h-36"
           />
-          <div className="mt-2.5">
-            <CopyButton text={output}>Copy Output</CopyButton>
-          </div>
         </div>
       )}
     </div>

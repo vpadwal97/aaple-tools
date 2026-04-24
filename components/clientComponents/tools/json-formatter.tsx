@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { formatJSON } from "@/lib/jsonFormatter";
 import CopyButton from "@/components/CopyButton";
 import Button from "@/components/Button";
+import { ResultBox } from "@/components/ResultBox";
 
 export default function JsonFormatterClientPage() {
   const [input, setInput] = useState("");
@@ -39,27 +40,28 @@ export default function JsonFormatterClientPage() {
           name="input"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="textarea-base w-full h-36 p-2.5"
+          className="textarea-base w-full h-50 p-2.5"
         />
 
         {/* Button */}
-        <Button onClick={handleFormat}>Format JSON</Button>
+        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-3">
+          <Button onClick={handleFormat}>Format JSON</Button>
 
-        <Button onClick={() => setInput("")}>Clear</Button>
+          <Button onClick={() => setInput("")}>Clear</Button>
+        </div>
 
-        <CopyButton text={output} />
         {/* Error */}
       </div>
       {error && <p className="text-red-500 mt-2">{error}</p>}
 
       {/* Output */}
       {output && (
-        <textarea
+        <ResultBox
           id="output"
           name="output"
+          label="Output:"
           value={output}
-          readOnly
-          className="textarea-base w-full h-36 p-2.5 mt-2.5"
+          heightClass="h-50"
         />
       )}
     </>

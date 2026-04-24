@@ -75,7 +75,7 @@ export default function CopyButton({ text, children }: Props) {
     <button
       onClick={handleCopy}
       disabled={!text}
-      className="p-2
+      className="p-2 cursor-pointer
         rounded-md
         text-gray-400 hover:text-gray-200
         hover:bg-white/10

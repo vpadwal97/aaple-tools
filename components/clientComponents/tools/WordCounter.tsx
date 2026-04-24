@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { getWordStats } from "@/lib/wordCounter";
+import Button from "@/components/Button";
 
 export default function WordCounter() {
   const [text, setText] = useState("");
@@ -22,7 +23,7 @@ export default function WordCounter() {
 
       {/* Actions */}
       <div className="mt-2.5">
-        <button onClick={() => setText("")}>Clear</button>
+        <Button onClick={() => setText("")}>Clear</Button>
       </div>
 
       {/* Stats */}

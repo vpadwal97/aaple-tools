@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 export default function Navbar() {
   const [dark, setDark] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const saved = localStorage.getItem("theme");
     if (saved === "dark") {
       document.documentElement.classList.add("dark");

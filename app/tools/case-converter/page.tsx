@@ -1,6 +1,8 @@
 import ToolWrapper from "@/components/clientComponents/tools/ToolWrapper";
 import CaseConverter from "@/components/clientComponents/tools/CaseConverter";
 import { toolSeo } from "@/lib/toolSeo";
+import ToolsList from "@/components/ToolsList";
+import { AllTools } from "@/app/constant/varaiables";
 
 export const metadata = {
   title: "Case Converter Online Free | Uppercase, Lowercase, CamelCase",
@@ -11,20 +13,14 @@ const seo = toolSeo["case-converter"];
 
 export default function Page() {
   return (
-    <ToolWrapper seo={seo}>
-      <CaseConverter />
-      <hr className="my-3" />
-
-      <h2>What is a Case Converter?</h2>
-      <p>This tool helps you convert text into different formats quickly.</p>
-
-      <h2>Supported Formats</h2>
-      <ul>
-        <li>Uppercase</li>
-        <li>Lowercase</li>
-        <li>CamelCase</li>
-        <li>Snake_case</li>
-      </ul>
-    </ToolWrapper>
+    <>
+      <ToolWrapper seo={seo}>
+        <CaseConverter />
+      </ToolWrapper>
+      <aside className="sidebar mt-8 max-w-screen-xl">
+        <h3 className="text-lg font-semibold mb-2">Try Other Useful Tools</h3>
+        <ToolsList tools={AllTools} />
+      </aside>
+    </>
   );
 }
