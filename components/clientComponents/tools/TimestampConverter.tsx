@@ -25,7 +25,7 @@ export default function TimestampConverter() {
         name="input"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        className="w-full h-36 p-2.5"
+        className="textarea-base w-full h-36 p-2.5"
       />
       <button onClick={() => setInput(String(Date.now()))}>
         Use Current Time
@@ -43,13 +43,25 @@ export default function TimestampConverter() {
               <p>
                 <strong>Readable Date:</strong>
               </p>
-              <textarea id="date" name="date" value={result.date} readOnly />
+              <textarea
+                className="textarea-base "
+                id="date"
+                name="date"
+                value={result.date}
+                readOnly
+              />
               <CopyButton text={result.date}>Copy</CopyButton>
 
               <p className="mt-2.5">
                 <strong>ISO Format:</strong>
               </p>
-              <textarea id="iso" name="iso" value={result.iso} readOnly />
+              <textarea
+                className="textarea-base "
+                id="iso"
+                name="iso"
+                value={result.iso}
+                readOnly
+              />
               <CopyButton text={result.iso}>Copy</CopyButton>
             </>
           )}
@@ -60,6 +72,7 @@ export default function TimestampConverter() {
                 <strong>Unix (seconds):</strong>
               </p>
               <textarea
+                className="textarea-base "
                 id="unixSeconds"
                 name="unixSeconds"
                 value={result.unixSeconds}
@@ -71,6 +84,7 @@ export default function TimestampConverter() {
                 <strong>Unix (milliseconds):</strong>
               </p>
               <textarea
+                className="textarea-base "
                 id="unixMilliseconds"
                 name="unixMilliseconds"
                 value={result.unixMilliseconds}

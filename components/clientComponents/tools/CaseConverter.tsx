@@ -19,7 +19,7 @@ export default function CaseConverter() {
         id="input"
         name="input"
         onChange={(e) => setInput(e.target.value)}
-        className="w-full h-36 p-2.5"
+        className="textarea-base w-full h-36 p-2.5"
       />
 
       {/* Buttons */}
@@ -33,27 +33,57 @@ export default function CaseConverter() {
           <strong>UPPERCASE:</strong>
           <CopyButton text={result.upper} />
         </p>
-        <textarea value={result.upper} id="upper" name="upper" readOnly />
+        <textarea
+          className="textarea-base "
+          value={result.upper}
+          id="upper"
+          name="upper"
+          readOnly
+        />
         <p>
           <strong>lowercase:</strong>
           <CopyButton text={result.lower} />
         </p>
-        <textarea value={result.lower} id="lower" name="lower" readOnly />
+        <textarea
+          className="textarea-base "
+          value={result.lower}
+          id="lower"
+          name="lower"
+          readOnly
+        />
         <p>
           <strong>Title Case:</strong>
           <CopyButton text={result.title} />
         </p>
-        <textarea value={result.title} id="title" name="title" readOnly />
+        <textarea
+          className="textarea-base "
+          value={result.title}
+          id="title"
+          name="title"
+          readOnly
+        />
         <p>
           <strong>camelCase:</strong>
           <CopyButton text={result.camel} />
         </p>
-        <textarea value={result.camel} id="camel" name="camel" readOnly />
+        <textarea
+          className="textarea-base "
+          value={result.camel}
+          id="camel"
+          name="camel"
+          readOnly
+        />
         <p>
           <strong>snake_case:</strong>
           <CopyButton text={result.snake} />
         </p>
-        <textarea value={result.snake} id="snake" name="snake" readOnly />
+        <textarea
+          className="textarea-base "
+          value={result.snake}
+          id="snake"
+          name="snake"
+          readOnly
+        />
       </div>
     </div>
   );

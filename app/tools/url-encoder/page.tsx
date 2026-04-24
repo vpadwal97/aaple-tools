@@ -1,18 +1,17 @@
 import ToolWrapper from "@/components/clientComponents/tools/ToolWrapper";
 import UrlEncoder from "@/components/clientComponents/tools/UrlEncoder";
+import { toolSeo } from "@/lib/toolSeo";
 
 export const metadata = {
   title: "URL Encoder & Decoder Online Free | Encode URLs Instantly",
   description:
     "Encode and decode URLs instantly using this free online URL encoder and decoder tool.",
 };
+const seo = toolSeo["url-encoder"];
 
 export default function Page() {
   return (
-    <ToolWrapper
-      title="URL Encoder / Decoder"
-      description="Convert text into URL-safe format and decode it back instantly."
-    >
+    <ToolWrapper seo={seo}>
       <UrlEncoder />
       <hr className="my-3" />
 

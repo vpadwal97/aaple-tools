@@ -46,7 +46,7 @@ export default function JwtDecoder() {
         name="token"
         value={token}
         onChange={(e) => setToken(e.target.value)}
-        className="w-full h-36 p-2.5"
+        className="textarea-base w-full h-36 p-2.5"
       />
 
       {/* Actions */}
@@ -70,7 +70,7 @@ export default function JwtDecoder() {
               name="header"
               value={header}
               readOnly
-              className="w-full h-36 p-2.5"
+              className="textarea-base w-full h-36 p-2.5"
             />
             <CopyButton text={header}>Copy Header</CopyButton>
           </div>
@@ -84,7 +84,7 @@ export default function JwtDecoder() {
               name="payload"
               value={payload}
               readOnly
-              className="w-full h-36 p-2.5"
+              className="textarea-base w-full h-36 p-2.5"
             />
             <CopyButton text={payload}>Copy Payload</CopyButton>
           </div>

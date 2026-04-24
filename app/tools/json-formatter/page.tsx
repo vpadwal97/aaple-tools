@@ -1,5 +1,8 @@
+import { AllTools } from "@/app/constant/varaiables";
+import ToolsList from "@/components/ToolsList";
 import ToolWrapper from "@/components/clientComponents/tools/ToolWrapper";
 import JsonFormatterClientPage from "@/components/clientComponents/tools/json-formatter";
+import { toolSeo } from "@/lib/toolSeo";
 
 export const metadata = {
   title: "JSON Formatter Online Free | Format & Validate JSON Instantly",
@@ -7,29 +10,18 @@ export const metadata = {
     "Format, validate, and beautify JSON instantly with this free online JSON formatter. Fast, secure, and easy to use.",
 };
 
+const seo = toolSeo["json-formatter"];
+
 export default function JsonFormatterPage() {
   return (
     <>
-      <ToolWrapper
-        title="JSON Formatter"
-        description="Format and validate your JSON data instantly using this free online tool."
-      >
+      <ToolWrapper seo={seo}>
         <JsonFormatterClientPage />
-        <hr className="my-3" />
-
-        <h2>What is a JSON Formatter?</h2>
-        <p>
-          A JSON formatter helps you format and validate JSON data into a
-          readable structure.
-        </p>
-
-        <h2>Why Use This Tool?</h2>
-        <ul>
-          <li>Instant formatting</li>
-          <li>Error detection</li>
-          <li>Improves readability</li>
-        </ul>
       </ToolWrapper>
+      <aside className="sidebar mt-8">
+        <h3 className="text-lg font-semibold mb-2">Try Other Useful Tools</h3>
+        <ToolsList tools={AllTools} />
+      </aside>
     </>
   );
 }
