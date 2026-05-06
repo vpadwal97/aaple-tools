@@ -313,4 +313,46 @@ export const toolSeo = {
       },
     ],
   },
+
+  "slug-generator": {
+    title: "Slug Generator",
+    description: "Generate SEO-friendly slugs from text instantly.",
+    howToUse: [
+      "Enter your text",
+      "Adjust options like lowercase or separator",
+      "Copy the generated slug",
+    ],
+    sections: [
+      {
+        title: "What is a Slug?",
+        type: "text",
+        content:
+          "A slug is a URL-friendly version of a string, typically used in web addresses. It improves readability and SEO.",
+      },
+      {
+        title: "Why Use This Tool?",
+        type: "list",
+        content: [
+          "Generate SEO-friendly URLs",
+          "Clean and readable slugs",
+          "Remove unnecessary words",
+        ],
+      },
+      {
+        title: "Features",
+        type: "list",
+        content: [
+          "Custom separators",
+          "Lowercase control",
+          "Stop word removal",
+          "Instant generation",
+        ],
+      },
+      {
+        title: "Use Cases",
+        type: "list",
+        content: ["Blog URLs", "SEO optimization", "Web development"],
+      },
+    ],
+  },
 } satisfies Record<string, SeoData>;

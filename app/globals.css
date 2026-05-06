@@ -13,3 +13,41 @@ html {
          dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100
          dark:placeholder-gray-500 dark:focus:ring-blue-400 dark:focus:border-blue-400;
 }
+
+.checkbox {
+  @apply w-5 h-5 rounded border border-gray-300 bg-white
+         focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+         transition cursor-pointer
+         appearance-none
+         relative;
+
+  @apply dark:border-gray-700 dark:bg-gray-900
+         dark:focus:ring-blue-400 dark:focus:border-blue-400;
+
+  @apply checked:bg-blue-500 checked:border-blue-500
+         dark:checked:bg-blue-400 dark:checked:border-blue-400;
+}
+
+.checkbox:checked::after {
+  content: "";
+  @apply absolute inset-0 flex items-center justify-center;
+}
+
+.checkbox:checked::after {
+  content: "✓";
+  @apply text-white text-sm font-bold flex items-center justify-center;
+}
+
+.select-base {
+  @apply rounded-lg border border-gray-300 bg-white text-gray-900
+         shadow-sm transition cursor-pointer
+         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+         dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100
+         dark:focus:ring-blue-400 dark:focus:border-blue-400
+         appearance-none;
+}
+
+/* Optional: placeholder-style first option */
+.select-base:invalid {
+  @apply text-gray-400 dark:text-gray-500;
+}

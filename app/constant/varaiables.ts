@@ -50,13 +50,20 @@ export const AllTools = [
   },
   {
     id: 9,
+    name: "Slug Generator",
+    path: "/tools/slug-generator",
+    description: "Generate SEO-friendly slugs instantly.",
+  },
+  //
+  {
+    id: 15,
     name: "Password Generator",
     path: "#",
     description: "Generate secure passwords instantly.",
     comingSoon: true,
   },
   {
-    id: 10,
+    id: 16,
     name: "JSON to CSV Converter",
     path: "#",
     description: "Convert JSON data into CSV format.",

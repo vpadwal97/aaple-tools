@@ -1,4 +1,5 @@
 import { SeoData } from "@/app/constant/types";
+import ToolsList from "@/components/ToolsList";
 
 export default function ToolWrapper({
   children,
@@ -53,6 +54,8 @@ export default function ToolWrapper({
         This tool runs entirely in your browser and does not store your data.
       </p>
       <hr className="my-3" />
+
+      <ToolsList />
     </div>
   );
 }
