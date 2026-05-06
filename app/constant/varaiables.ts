@@ -54,6 +54,12 @@ export const AllTools = [
     path: "/tools/slug-generator",
     description: "Generate SEO-friendly slugs instantly.",
   },
+  {
+    id: 10,
+    name: "regex-tester",
+    path: "/tools/regex-tester",
+    description: "Test and debug regular expressions online instantly.",
+  },
   //
   {
     id: 15,

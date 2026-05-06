@@ -355,4 +355,47 @@ export const toolSeo = {
       },
     ],
   },
+
+  "regex-tester": {
+    title: "Regex Tester & Debugger",
+    description: "Test and debug regular expressions online instantly.",
+    howToUse: [
+      "Enter your regex pattern",
+      "Add flags like g, i, m",
+      "Paste your test string",
+      "View matches instantly",
+    ],
+    sections: [
+      {
+        title: "What is Regex?",
+        type: "text",
+        content:
+          "Regular expressions (regex) are patterns used to match text. They are widely used in programming for validation and parsing.",
+      },
+      {
+        title: "Why Use This Tool?",
+        type: "list",
+        content: [
+          "Test regex online instantly",
+          "Debug patterns quickly",
+          "Understand match results",
+        ],
+      },
+      {
+        title: "Features",
+        type: "list",
+        content: [
+          "Supports flags (g, i, m)",
+          "Instant matching",
+          "Error handling",
+          "Fast and browser-based",
+        ],
+      },
+      {
+        title: "Use Cases",
+        type: "list",
+        content: ["Form validation", "Data extraction", "Log parsing"],
+      },
+    ],
+  },
 } satisfies Record<string, SeoData>;
