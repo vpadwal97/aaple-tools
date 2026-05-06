@@ -10,6 +10,9 @@ export default function sitemap() {
     { url: "https://aaple-tools.vercel.app/tools/jwt-decoder" },
     { url: "https://aaple-tools.vercel.app/tools/timestamp" },
 
+    { url: "https://aaple-tools.vercel.app/tools/slug-generator" },
+    { url: "https://aaple-tools.vercel.app/tools/regex-tester" },
+
     // add all tools
   ];
 }
