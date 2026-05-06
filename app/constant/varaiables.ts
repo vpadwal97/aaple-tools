@@ -60,16 +60,22 @@ export const AllTools = [
     path: "/tools/regex-tester",
     description: "Test and debug regular expressions online instantly.",
   },
+  {
+    id: 11,
+    name: "Minifier / Beautifier",
+    path: "/tools/minifier",
+    description: "Minify and beautify HTML, CSS, and JS code.",
+  },
   //
   {
-    id: 15,
+    id: 150,
     name: "Password Generator",
     path: "#",
     description: "Generate secure passwords instantly.",
     comingSoon: true,
   },
   {
-    id: 16,
+    id: 160,
     name: "JSON to CSV Converter",
     path: "#",
     description: "Convert JSON data into CSV format.",

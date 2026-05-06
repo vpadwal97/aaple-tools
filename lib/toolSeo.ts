@@ -398,4 +398,51 @@ export const toolSeo = {
       },
     ],
   },
+
+  minifier: {
+    title: "HTML CSS JS Minifier & Beautifier",
+    description:
+      "Minify and beautify HTML, CSS, and JavaScript code instantly.",
+    howToUse: [
+      "Select HTML, CSS, or JS",
+      "Paste your code",
+      "Click Minify or Beautify",
+      "Copy the result",
+    ],
+    sections: [
+      {
+        title: "What is Minification?",
+        type: "text",
+        content:
+          "Minification removes unnecessary characters from code to reduce file size and improve performance.",
+      },
+      {
+        title: "Why Use This Tool?",
+        type: "list",
+        content: [
+          "Reduce file size",
+          "Improve website performance",
+          "Format messy code",
+        ],
+      },
+      {
+        title: "Features",
+        type: "list",
+        content: [
+          "Supports HTML, CSS, JS",
+          "Instant formatting",
+          "No data storage",
+        ],
+      },
+      {
+        title: "Use Cases",
+        type: "list",
+        content: [
+          "Frontend optimization",
+          "Code cleanup",
+          "Performance tuning",
+        ],
+      },
+    ],
+  },
 } satisfies Record<string, SeoData>;

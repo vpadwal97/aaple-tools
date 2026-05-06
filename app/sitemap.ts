@@ -12,6 +12,7 @@ export default function sitemap() {
 
     { url: "https://aaple-tools.vercel.app/tools/slug-generator" },
     { url: "https://aaple-tools.vercel.app/tools/regex-tester" },
+    { url: "https://aaple-tools.vercel.app/tools/minifier" },
 
     // add all tools
   ];
