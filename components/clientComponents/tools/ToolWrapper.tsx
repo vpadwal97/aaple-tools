@@ -1,4 +1,4 @@
-import { SeoData } from "@/app/constant/types";
+import { SeoData } from "@/constant/types";
 import ToolsList from "@/components/ToolsList";
 
 export default function ToolWrapper({

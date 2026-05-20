@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AllTools } from "./constant/varaiables";
+import { AllTools } from "@/constant/varaiables";
 
 // const tools = [
 //   { name: "JSON Formatter", path: "/tools/json-formatter" },

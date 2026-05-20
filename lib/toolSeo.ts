@@ -1,4 +1,4 @@
-import { SeoData } from "@/app/constant/types";
+import { SeoData } from "@/constant/types";
 
 export const toolSeo = {
   "json-formatter": {

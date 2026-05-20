@@ -1,4 +1,4 @@
-import { AllTools } from "@/app/constant/varaiables";
+import { AllTools } from "@/constant/varaiables";
 import Link from "next/link";
 import React from "react";
 

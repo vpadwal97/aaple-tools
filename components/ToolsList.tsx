@@ -1,6 +1,6 @@
 "use client";
 
-import { AllTools } from "@/app/constant/varaiables";
+import { AllTools } from "@/constant/varaiables";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

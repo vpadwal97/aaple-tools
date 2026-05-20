@@ -1,30 +1,41 @@
 "use client";
 
 import Link from "next/link";
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [dark, setDark] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const saved = localStorage.getItem("theme");
-    if (saved === "dark") {
-      document.documentElement.classList.add("dark");
-      setDark(true);
-    }
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const initialDark = saved ? saved === "dark" : media.matches;
+
+    setDark(initialDark);
+    document.documentElement.classList.toggle("dark", initialDark);
+
+    const handler = (e: MediaQueryListEvent) => {
+      const saved = localStorage.getItem("theme");
+      if (saved) return;
+
+      setDark(e.matches);
+      document.documentElement.classList.toggle("dark", e.matches);
+    };
+
+    media.addEventListener("change", handler);
+
+    return () => media.removeEventListener("change", handler);
   }, []);
 
   const toggleTheme = () => {
-    if (dark) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setDark(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setDark(true);
-    }
+    const newTheme = !dark;
+
+    setDark(newTheme);
+
+    document.documentElement.classList.toggle("dark", newTheme);
+    localStorage.setItem("theme", newTheme ? "dark" : "light");
   };
 
   return (
