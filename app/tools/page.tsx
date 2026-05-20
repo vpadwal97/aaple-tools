@@ -26,7 +26,7 @@ export default function ToolsPage() {
   border border-gray-300 dark:border-gray-700
   p-4 rounded-lg
   transition-all duration-200 ease-in-out
-  hover:scale-105
+  hover:border-gray-400 dark:hover:border-gray-500
   hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10
 "
               >
@@ -50,7 +50,7 @@ export default function ToolsPage() {
   border border-gray-300 dark:border-gray-700
   p-4 rounded-lg
   transition-all duration-200 ease-in-out
-  hover:scale-105
+  hover:border-gray-400 dark:hover:border-gray-500
   hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10
 "
               >
