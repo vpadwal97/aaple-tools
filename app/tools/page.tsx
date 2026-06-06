@@ -69,8 +69,8 @@ export default function ToolsPage() {
             </React.Fragment>
           ),
         )}
-        <CopyButton text={someCode}></CopyButton>
       </div>
+        <CopyButton text={someCode}></CopyButton>
     </>
   );
 }
