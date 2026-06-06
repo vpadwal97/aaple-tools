@@ -70,7 +70,9 @@ export default function ToolsPage() {
           ),
         )}
       </div>
+      <div className="hidden">
         <CopyButton text={someCode}></CopyButton>
+      </div>
     </>
   );
 }
