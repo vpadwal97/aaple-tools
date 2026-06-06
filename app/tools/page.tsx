@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { AllTools } from "@/constant/varaiables";
+import { AllTools, someCode } from "@/constant/varaiables";
 import React from "react";
+import CopyButton from "@/components/CopyButton";
 
 export const metadata = {
   title: "All Tools - Aaple Tools",
@@ -66,8 +67,9 @@ export default function ToolsPage() {
                 )}
               </div>
             </React.Fragment>
-          )
+          ),
         )}
+        <CopyButton text={someCode}></CopyButton>
       </div>
     </>
   );
